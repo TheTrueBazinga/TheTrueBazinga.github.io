@@ -1,0 +1,182 @@
+FORMAT: 1A
+HOST: https://nite-apigateway.herokuapp.com/users
+
+# Consumer API Documentation
+API Documentation with consumer routes.
+
+# Allowed HTTPs requests:
+<pre>
+POST     : To create resource 
+PUT      : Update resource
+GET      : Get a resource or list of resources
+DELETE   : To delete resource
+</pre>
+
+# Description Of Usual Server Responses:
+- 200 `OK` - the request was successful.
+- 400 `Bad Request` - the request could not be understood or was missing required parameters.
+- 401 `Unauthorized` - authentication failed or user doesn't have permissions for requested operation.
+- 403 `Forbidden` - access denied.
+- 404 `Not Found` - resource was not found.
+- 500 `Error` - Error in some process.
+
+
+# Group Consumer
+Represents consumer details. 
+---
+**Consumer attributes:**
+
+- name `(String)` : name. 
+- email `(String)` : email.
+- password `(String)` : password.
+- birth `(Date)` : birth date.
+- phone `(String)` : phone number.
+---
+
+# Group Routes
+## List all users [/consumer]
+
+### List all users [GET]
+Retrieve list of all consumers.
+
++ Request
+
+    + Headers
+            
+            Authorization: Bearer token 
+                
++ Response 200 (application/json; charset=utf-8)
+
+        [
+            {
+                "_id": "5fc26682edba290024b4dbea",
+                "name": "Consumer1",
+                "email": "consumer1@mail.com",
+                "password": "$2a$10$4WmBRIqWmUzDIYYkzhjnd.IMKNQTCu0V5CTOk/QUZO5z7F3bNOy8C",
+                "birth": "1998-02-10T00:00:00.000Z",
+                "phone": "910000001",
+                "__v": 0
+            },
+            {
+                "_id": "5fc2cb5d2f9e460024841640",
+                "name": "Consumer1",
+                "email": "consumer2@gmail.com",
+                "password": "$2a$10$cY6sjcbEEMvsQbkjqE8iwO9UEV7w4tY72azQ6kn.F1OGAYXmKIp56",
+                "birth": "1998-02-10T00:00:00.000Z",
+                "phone": "911111111",
+                "__v": 0
+            }
+        ]
+
++ Response 401 
+
+        Unauthorized
+
+## Register [/consumer]
+
+### Register [POST]
+Create a consumer.
++ Request
+
+        {
+            "name" : "Consumer 5",
+            "email" : "consumer5@mail.com" ,
+            "password" : "consumer5" ,
+            "birth" : "01-01-1990" ,
+            "phone" : "910000000" ,
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "_id": "5fca6c3d6a5346002499eeec",
+            "name": "Consumer 5",
+            "password": "$2a$10$CS9Ddpqs.T7k32VowfLyLecSxDPajxZ36F0LcmdhIYeWsNW3JZteu",
+            "email": "consumer5@mail.com",
+            "birth": "1990-01-01T00:00:00.000Z",
+            "phone": "910000000",
+            "__v": 0
+        }
+
++ Response 400
+
+        Some element is missing and it's required
+
+
+
+## Consumer Login [/consumer/login]
+### Login [POST]
+Consumer Login
+
++ Request  (application/json; charset=utf-8)
+
+        {
+            "email" : "consumer5@mail.com" ,
+            "password" : "consumer5" ,
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmNhNmMzZDZhNTM0NjAwMjQ5OWVlZWMiLCJpYXQiOjE2MDcxMDE4NzYsImV4cCI6MTYwNzEyMzQ3NiwiaXNzIjoiTklURSJ9.y0p6P_YoAl9n7j0u9iDuJBSDdIRUup186yVmafA-Kso",
+            "refresh_token": "ec886320-f1b1-40e6-9930-413c4e207c0b",
+            "user": {
+                "id": "5fca6c3d6a5346002499eeec",
+                "name": "Consumer 5",
+                "email": "consumer5@mail.com",
+                "birth": "1990-01-01T00:00:00.000Z",
+                "phone": "910000000"
+            }
+        }
+
++ Response 400 (application/json)
+
+        Some element is missing and it's required
+
++ Response 401 (application/json)
+
+        Username or Password Invalid
+
+
+## Update Password [/consumer/resetPassword]
+### Update Password [POST]
+Update Password
+
++ Request (application/json; charset=utf-8)
+
+    + Headers
+
+            Authorization: Bearer token
+
+    + Body
+        {
+        "password" : "consumer5" ,
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        "Password Updated"
+
++ Response 400 (application/json)
+
+        Some element is missing and it's required
+
++ Response 401 (application/json)
+
+        Unauthorized
+
+
+## Reset Password [/consumer/sendEmail{?email}]
+### Reset Password [GET]
+Reset password and receive it by email.
+
++ Parameters
+    + email (String) - Consumer's email
+
++ Response 200 (application/json; charset=utf-8)
+
+        "Email sent"
+
++ Response 500 (application/json)
+
+        "Email doesn't exist!"

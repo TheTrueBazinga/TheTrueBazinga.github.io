@@ -1,0 +1,285 @@
+FORMAT: 1A
+HOST: https://nite-apigateway.herokuapp.com/users
+
+# Employee API Documentation
+API Documentation with employee routes.
+
+# Allowed HTTPs requests:
+<pre>
+POST     : To create resource 
+PUT      : Update resource
+GET      : Get a resource or list of resources
+DELETE   : To delete resource
+</pre>
+
+# Description Of Usual Server Responses:
+- 200 `OK` - the request was successful.
+- 400 `Bad Request` - the request could not be understood or was missing required parameters.
+- 401 `Unauthorized` - authentication failed or user doesn't have permissions for requested operation.
+- 403 `Forbidden` - access denied.
+- 404 `Not Found` - resource was not found.
+- 500 `Error` - Error in some process.
+
+
+# Group Employee
+Represents Employee details. 
+---
+**Employee attributes:**
+
+- name `(String)` : name. 
+- email `(String)` : email.
+- password `(String)` : password.
+- birth `(Date)` : birth date.
+- phone `(String)` : phone number.
+- address `(String)` : address.
+- job `(String)` : job.
+- establishment `(String)` : establishment name.
+- idEstablishment `(String)` : establishment id.
+
+---
+
+# Group Routes
+## Employee CRUD [/employee]
+
+### Register [POST]
+Register. 
+This route only can be executed by the manager of the establishment.
+This route will send an email to employee with his first password. 
+
++ Request
+
+    + Headers
+            
+            Authorization: Bearer token
+    
+    + Body
+            
+            {
+                'name' : 'Employee 1",
+                'email' : 'employee1@mail.com',
+                'birth' : '01-01-1990',
+                'job' : 'Bartender',
+                'establishment' : 'BA',
+                'phone' : '910000111',
+                'address' : 'Party Street'
+            }
+                
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "_id" : "5fc95b4d3dd7920024ff0ada",
+            "name" : "Employee 1",
+            "email" : "employee1@mail.com",
+            "birth" : "1990-01-01T00:00:00.000Z",
+            "job" : "Bartender",
+            "establishment" : "BA",
+            "phone" : "910000111",
+            "address" : "Party Street",
+            "password" : "$2a$10$YlRsPwG6Vn70L.sk3lym9edlqoH.qq4DFzo2uxXRfGda.kwP1HlIu",
+            "idEstablishment" : "1",
+            "__v" : 0
+        }
+
++ Response 401 
+
+        Unauthorized
+
+### Update employee info [PUT]
+Update employee info.
+
++ Request (application/json; charset=utf-8)
+
+    + Headers
+
+            Authorization: Bearer token
+
+    + Body
+            
+            {
+                "name" : "Employee 1",
+                "email": "employee1@mail.com"
+                "birth" : "01-01-1990"
+                "phone" : "911000001"
+                "password": "employee1"
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+        "Employee Updated"
+
++ Response 400 (application/json)
+
+        "Some element is missing and it's required"
+
++ Response 401 (application/json)
+
+        "Unauthorized"
+
+
+### Get own info [GET]
+List own info.
+
++ Request (application/json; charset=utf-8)
+
+    + Headers
+
+            Authorization: Bearer token
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "_id": "5fc95b4d3dd7920024ff0ada",
+            "name": "Employee 1 ",
+            "birth": "1990-01-01T00:00:00.000Z",
+            "job": "Bartender",
+            "email": "employee1@mail.com",
+            "establishment": "BA",
+            "phone": "910000111",
+            "address": "Party Street",
+            "password": "$2a$10$E5K.trq3ZyVq4KFuVmgSYu.P.6G55vHyXJodcjRk0/bxrcUFVTonC",
+            "idEstablishment": "1",
+            "__v": 0
+        }
+
++ Response 401 (application/json)
+
+        "Unauthorized"
+
+## Employee Login [/employee/login]
+### Login [POST]
+Employee Login
+
++ Request  (application/json; charset=utf-8)
+
+        {
+            "email" : "employee1@mail.com" ,
+            "password" : "employee1" ,
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmM5NWI0ZDNkZDc5MjAwMjRmZjBhZGEiLCJuaWd0aENsdWJJZCI6IjEiLCJpYXQiOjE2MDcwMzE2ODQsImV4cCI6MTYwNzA1MzI4NCwiaXNzIjoiTklURSJ9.ZqPqXFsCNw-E0NfrPXr1NCdgZMXw2S58S_KSyuVJqeU",
+            "refresh_token": "9a9f4854-7094-466a-87cb-6332413aab3a",
+            "user": {
+                "id": "5fc95b4d3dd7920024ff0ada",
+                "name": "Employee 1",
+                "email": "employee1@mail.com",
+                "birth": "1990-01-10T00:00:00.000Z",
+                "phone": "910000111",
+                "establishment": "BA",
+                "job": "Bartender",
+                "idEstablishment": "1"
+            }
+        }
+
++ Response 400 (application/json)
+
+        Some element is missing and it's required
+
++ Response 401 (application/json)
+
+        Username or Password Invalid
+
+
+## Reset Password [/employee/resetPassword]
+### Reset Password [POST]
+Update Password
+
++ Request (application/json; charset=utf-8)
+
+    + Headers
+
+            Authorization: Bearer token
+
+    + Body
+            
+            {
+                "password" : "employee1_v2" ,
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+        "Password Updated"
+
++ Response 400 (application/json)
+
+        Some element is missing and it's required
+
++ Response 401 (application/json)
+
+        Unauthorized
+
+## Update Email [/employee/email]
+### Update Email [PUT]
+Update own email.
+
++ Request
+    
+    + Headers
+
+            Authorization: Bearer token
+
+    + Body
+
+            {
+                "email": "employee1_v2@mail.com"
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+        "Email Updated"
+
++ Response 400 (application/json)
+
+        Some element is missing and it's required
+
++ Response 401 (application/json)
+
+        Unauthorized
+
+
+## Update Password [/employee/password]
+### Update Password [PUT]
+Update own password.
+
++ Request
+    
+    + Headers
+
+            Authorization: Bearer token
+
+    + Body
+
+            {
+                "oldPassword": "employee1",
+                "newPassword": "employee_v2"
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+        "Password Updated"
+
++ Response 400 (application/json)
+
+        Some element is missing and it's required
+
++ Response 401 (application/json)
+
+        Unauthorized
+
+
+## Reset Password by email [/employee/sendEmail{?email}]
+### Reset Password [GET]
+Reset password and receive it by email.
+
++ Parameters
+    + email (String) - Employee's email
+
++ Response 200 (application/json; charset=utf-8)
+
+        "Email sent"
+
++ Response 500 (application/json)
+
+        "Email doesn't exist!"

@@ -1,0 +1,197 @@
+FORMAT: 1A
+HOST: https://nite-apigateway.herokuapp.com/cards
+
+# CardsMS API Documentation
+API Documentation with CardsMS routes.
+
+# Allowed HTTPs requests:
+<pre>
+PUT     : To create resource 
+POST      : Update resource
+GET      : Get a resource or list of resources
+DELETE   : To delete resource
+</pre>
+
+# Description Of Usual Server Responses:
+- 200 `OK` - the request was successful.
+- 400 `Bad Request` - the request could not be understood or was missing required parameters.
+- 401 `Unauthorized` - authentication failed or user doesn't have permissions for requested operation.
+- 403 `Forbidden` - access denied.
+- 404 `Not Found` - resource was not found.
+- 500 `Error` - Error in some process.
+
+
+# Group Consumer
+Represents phisical cards details. 
+---
+**Consumer attributes:**
+
+- id `(String)` : id. 
+- free `(Boolean)` : state of the card.
+- creation_date `(Date)` : date of creation.
+- circulating `(Boolean)` : boolean that indicates if card is circulating or not.
+- organization `(String)` : id of organization.
+---
+
+# Group Routes
+## List all cards [/]
+
+### List all cards [GET]
+Retrieve list of all cards.
+
++ Request
+
+    + Headers
+            
+            Authorization: Bearer token 
+                
++ Response 200 (application/json; charset=utf-8)
+
+        [
+            {
+                "_id": "5fcbb329ca32e238cca5a0ca",
+                "free": true,
+                "creation_date": "2020-12-05T16:19:53.000Z",
+                "circulating": true,
+                "organization": "111111",
+                "__v": 0
+            },
+            {
+                "_id": "5fcbb360a7ec952a34d2998a",
+                "free": true,
+                "creation_date": "2020-12-05T16:20:48.000Z",
+                "circulating": true,
+                "organization": "111111",
+                "__v": 0
+            }
+        ]
+
++ Response 401 
+
+        Unauthorized
+
+## Card info [/{id}]
+### Card info [GET]
+Retrieve card information
+
++ Parameters
+    + id (String) - Id of phisical card.
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer token
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "_id": "5fcbb329ca32e238cca5a0ca",
+            "free": true,
+            "creation_date": "2020-12-05T16:19:53.000Z",
+            "circulating": true,
+            "organization": "111111",
+            "__v": 0
+        }
+
++ Response 401 
+
+        Unauthorized
+
+## Drop All Establishment Cards [/DropAllOrganization]
+### Drop All Establishment Cards [DELETE]
+Delete all establishment cards.
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer token
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "_id": "5fcbb329ca32e238cca5a0ca",
+            "free": true,
+            "creation_date": "2020-12-05T16:19:53.000Z",
+            "circulating": true,
+            "organization": "111111",
+            "__v": 0
+        }
+
++ Response 400
+
+        Error occured! Manager's establishment doesn't exist in our database!
+
++ Response 401 
+
+        This user doesn't have permissions to do this operation!
++ Response 500
+
+        Error occured. It isn't possible to drop all cards of one night club.
+
+## Delete one card [/DeleteCard/{card}]
+### Delete one card [DELETE]
+Delete one phisical card.
+
++ Parameters
+    + card (String) - Id of phisical card.
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer token
+
++ Response 200 (application/json; charset=utf-8)
+
+        "Deleted card 5fcbcf2f8791425686ba7156"
+
++ Response 400 
+
+        Error occured! Manager's establishment does'nt exist in our database!
+
++ Response 401
+
+        "This manager can't delete this card!"
+
++ Response 401
+
+        "This user doesn't have permissions to do this operation!"
+
+## Create card [/newCard]
+### Delete one card [POST]
+Create one phisical card.
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer token
+    
+    + Body
+
+            {
+                "id" :  "5fcbcf2f8791425686ba7157"
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "_id": "5fcbcf2f8791425686ba7157",
+            "free": true,
+            "creation_date": "2020-12-05T18:53:31.000Z",
+            "circulating": true,
+            "organization": "1",
+            "__v": 0
+        }    
+
++ Response 400 
+
+        Error occured! Manager's establishment does'nt exist in our database!
+
+
++ Response 401
+
+        "This user doesn't have permissions to do this operation!"
+        
