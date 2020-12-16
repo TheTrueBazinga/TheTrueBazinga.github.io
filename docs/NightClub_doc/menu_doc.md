@@ -4,14 +4,13 @@ title: Menus
 parent: Night Club
 nav_order: 2
 ---
-
-
 ## Menus
 
 List of all routes:
 * [List all menus](#List-All-Menus)
 * [Get active menu](#Active-Menu)
 * [Update menu](#Update-Menu)
+* [Set Menu to Active](#Set-Active-Menu)
 * [Create new menu](#Create-new-Menu)
 * [Delete menu](#Delete-Menu)
 
@@ -62,6 +61,19 @@ req.body = {
 
 ___
 
+### Set Active Menu
+* **PUT https://nite-apigateway.herokuapp.com/nightClub/menus/active** - Set menu to active
+
+Requires token from manager.
+
+```js
+req.body = {
+    id : String
+}
+````
+
+___
+
 ### Create new Menu
 * **POST https://nite-apigateway.herokuapp.com/nightClub/menus/** - Create new menu
 
@@ -87,3 +99,5 @@ ___
 * **DELETE https://nite-apigateway.herokuapp.com/nightClub/menus/{id}** - Deletes menu
 
 Requires token from manager
+
+

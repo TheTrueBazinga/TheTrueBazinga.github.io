@@ -1,3 +1,9 @@
+---
+layout: default
+title: Products
+parent: Night Club
+nav_order: 2
+---
 ## Products
 
 List of all routes:

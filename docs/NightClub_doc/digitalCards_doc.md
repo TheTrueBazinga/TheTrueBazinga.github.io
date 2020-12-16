@@ -1,12 +1,9 @@
 ---
 layout: default
 title: Digital Cards
-parent: Cards
+parent: Night Club
 nav_order: 2
 ---
-
-
-
 ## Digital Cards
 
 List of all routes:
@@ -15,6 +12,8 @@ List of all routes:
 * [Insert Guest Code](#Insert-Guest-Code)
 * [Add product in digital card](#Add-product-in-digital-card)
 * [Change state](#Change-state)
+* [Change State to Locked](#Change-State-to-Locked)
+* [Change Payment State](#Change-Payment-State)
 * [Get Digital Card info](#Get-Digital-Card-info)
 * [Calculate Total](#Calculate-total)
 
@@ -68,26 +67,52 @@ Requires token in header (*Bearer token*) from employee.
 ```js
 req.body = {
     idDcard: String,
-    idProduct: String,
+    idProduto: String,
     nome: String,
     preço: Number,
     categoria: String
 }
 ```
+___
+
 ### Change State
 * **PUT localhost:3000/nightClub/digitalCards/cardState** - Change digital card status
 
-Requires token from employee.
+Requires token.
 
 ```js
 req.body = {
     idEstablishment: String
     idDcard : String
 }
-
 ```
 ___
 
+### Change State to Locked
+* **PUT localhost:3000/nightClub/digitalCards/cardState/Locked** - Change digital card status to Locked
+
+Requires token from employee.
+
+```js
+req.body = {
+    idDcard : String
+}
+```
+
+___
+
+### Change Payment State
+* **PUT localhost:3000/nightClub/digitalCards/cardPayment** - Change Digital Card Payment Status
+
+Requires token from employee (or manager)
+
+```js
+req.body = {
+    idDcard: String
+}
+```
+
+___
 ### Get Digital Card info
 * **GET https://nite-apigateway.herokuapp.com/nightClub/digitalCards** - Get digital card info.
 
