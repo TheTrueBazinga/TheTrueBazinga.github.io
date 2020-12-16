@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cards
+title: Phisical Cards
 parent: Cards
 nav_order: 2
 ---
