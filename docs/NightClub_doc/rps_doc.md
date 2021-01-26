@@ -1,7 +1,15 @@
+---
+layout: default
+title: Categories
+parent: Night Club
+nav_order: 2
+---
+
 ## Public Relations
 
 List of all routes:
 * [List all Public Relations](#List-All-Public-Relations)
+* [List Public Relations stats](#List-Public-Relations-Stats-By-Date)
 * [Update Public Relation](#Update-Public-Relation)
 * [Create new Public Relation](#Create-new-Public-Relation)
 * [Delete Public Relation](#Delete-Public-Relation)
@@ -16,6 +24,17 @@ Requires token in header (*Bearer token*) from employee or manager.
 
 
 ___
+
+
+### List Public Relations Stats By Date
+
+* **GET https://nite-apigateway.herokuapp.com/nightClub/public-relations/stats?date=aaaa-mm-dd** - List all Public Relations stats from one night club
+
+Requires token in header (*Bearer token*) from employee or manager.
+
+
+___
+
 
 
 ### Update Public Relation

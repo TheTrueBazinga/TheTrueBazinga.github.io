@@ -14,8 +14,11 @@ List of all routes:
 * [Register](#Register)
 * [Login](#Login)
 * [Update Password](#Update-Password)
+* [Update Info](#Update-info)
 * [Reset Password](#Reset-Password)
+* [Update password](#Update-Password)
 * [List all consumers](#-List-all-consumers)
+* [Own Historic](#Get-Historic)
 
 
 
@@ -58,6 +61,39 @@ req.body = {
 ```
 ____
 
+### Update info
+* **PUT https://nite-apigateway.herokuapp.com/users/consumer** - Consumer update own info
+
+```js
+headers: { Authorization: `Bearer ${token}` }
+``` 
+
+```js
+req.body = {
+    name: String,
+    email: String,
+    phone: String,
+    birth: Date
+}
+```
+____
+
+### Update Password
+* **PUT https://nite-apigateway.herokuapp.com/users/consumer/password** - Update consumer 
+password.
+
+```js
+headers: { Authorization: `Bearer ${token}` }
+``` 
+
+```js
+req.body = {
+    oldPassword: String,
+    newPassword: String
+}
+```
+____
+
 ### Reset Password
 * **GET https://nite-apigateway.herokuapp.com/users/consumer/sendMail?email=** - Ask email to resetPassword
 
@@ -72,3 +108,11 @@ ____
 headers: { Authorization: `Bearer ${token}` }
 ``` 
 
+___
+
+### Get Historic
+* **GET https://nite-apigateway.herokuapp.com/users/consumer/historic** - Get own historic
+
+```js
+headers: { Authorization: `Bearer ${token}` }
+``` 

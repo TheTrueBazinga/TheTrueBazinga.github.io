@@ -4,6 +4,7 @@ title: Phisical Cards
 parent: Cards
 nav_order: 2
 ---
+
 ## Phisical Cards
 
 **API LINK:**
@@ -18,6 +19,7 @@ List of all routes:
 * [Create new card](#Create-New-Card)
 * [Change Card Availability](#Change-Card-Availability)
 * [Change Card Circulation](#Change-Card-Circulation)
+* [Reset](#Reset)
 
 
 
@@ -113,4 +115,20 @@ headers: { Authorization: `Bearer ${token}` }
 req.body = {
     id: String,
     circulating: Boolean
-```}
+}
+```
+
+### Reset
+* **PUT https://nite-apigateway.herokuapp.com/cards/Reset** - Reset one fcard
+
+THIS ROUTE IS ONLY FOR MANAGERS AND EMPLOYEES
+
+```js
+headers: { Authorization: `Bearer ${token}` }
+``` 
+
+```js
+req.body = {
+    idfcard: String
+}
+```
