@@ -7,10 +7,10 @@ nav_order: 2
 ## Products
 
 List of all routes:
-* [List all products](#List-All-Products)
-* [Update product](#Update-Product)
-* [Create new product](#Create-new-product)
-* [Delete product](#Delete-product)
+* [List all products](#list-all-products)
+* [Update product](#update-product)
+* [Create new product](#create-new-product)
+* [Delete product](#delete-product)
 
 ___
 

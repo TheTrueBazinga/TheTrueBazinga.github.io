@@ -8,11 +8,11 @@ nav_order: 2
 ## Public Relations
 
 List of all routes:
-* [List all Public Relations](#List-All-Public-Relations)
-* [List Public Relations stats](#List-Public-Relations-Stats-By-Date)
-* [Update Public Relation](#Update-Public-Relation)
-* [Create new Public Relation](#Create-new-Public-Relation)
-* [Delete Public Relation](#Delete-Public-Relation)
+* [List all Public Relations](#list-all-public-relations)
+* [List Public Relations stats](#list-public-relations-stats-by-date)
+* [Update Public Relation](#update-public-relation)
+* [Create new Public Relation](#create-new-public-relation)
+* [Delete Public Relation](#delete-public-relation)
 
 ___
 

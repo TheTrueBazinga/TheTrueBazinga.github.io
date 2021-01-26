@@ -7,12 +7,12 @@ nav_order: 2
 ## Menus
 
 List of all routes:
-* [List all menus](#List-All-Menus)
-* [Get active menu](#Active-Menu)
-* [Update menu](#Update-Menu)
-* [Set Menu to Active](#Set-Active-Menu)
-* [Create new menu](#Create-new-Menu)
-* [Delete menu](#Delete-Menu)
+* [List all menus](#list-all-menus)
+* [Get active menu](#active-menu)
+* [Update menu](#update-menu)
+* [Set Menu to Active](#set-active-menu)
+* [Create new menu](#create-new-menu)
+* [Delete menu](#delete-menu)
 
 ___
 

@@ -8,11 +8,11 @@ nav_order: 2
 ## Payments
 
 List of all routes:
-* [Create Payment](#Create-Payment)
-* [Cancel Payment](#Cancel-Payment)
-* [Confirm Payment](#Confirm-Payment)
-* [Create Credit Card Token](#Create-Credit-Card-Token)
-* [Get Payment Info ](#Get-Payment-Info)
+* [Create Payment](#create-payment)
+* [Cancel Payment](#cancel-payment)
+* [Confirm Payment](#confirm-payment)
+* [Create Credit Card Token](#create-credit-card-token)
+* [Get Payment Info ](#get-payment-info)
 ___
 
 ### Create Payment
@@ -24,7 +24,8 @@ Requires token in header (*Bearer token*) from user.
 ```js
 req.body = {
     idNightClub: String,
-    iddcard: String
+    iddcard: String,
+    method: String
 } 
 ```
 

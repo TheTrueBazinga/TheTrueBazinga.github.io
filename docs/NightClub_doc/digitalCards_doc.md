@@ -7,15 +7,15 @@ nav_order: 2
 ## Digital Cards
 
 List of all routes:
-* [Creates Digital Card](#Creates-Digital-Card)
-* [Connect digital card](#Connect-digital-card)
-* [Insert Guest Code](#Insert-Guest-Code)
-* [Add product in digital card](#Add-product-in-digital-card)
-* [Change state](#Change-state)
-* [Change State to Locked](#Change-State-to-Locked)
-* [Change Payment State](#Change-Payment-State)
-* [Get Digital Card info](#Get-Digital-Card-info)
-* [Calculate Total](#Calculate-total)
+* [Creates Digital Card](#creates-digital-card)
+* [Connect digital card](#connect-digital-card)
+* [Insert Guest Code](#insert-guest-code)
+* [Add product in digital card](#add-product-in-digital-card)
+* [Change state](#change-state)
+* [Change State to Locked](#change-state-to-locked)
+* [Change Payment State](#change-payment-state)
+* [Get Digital Card info](#get-digital-card-info)
+* [Calculate Total](#calculate-total)
 
 
 ____

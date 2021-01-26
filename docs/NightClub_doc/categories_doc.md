@@ -8,7 +8,7 @@ nav_order: 2
 ## Categories
 
 List of all routes:
-* [List all categories](#List-All-categories)
+* [List all categories](#list-all-categories)
 
 ___
 

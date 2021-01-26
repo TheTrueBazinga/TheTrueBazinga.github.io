@@ -10,16 +10,16 @@ nav_order: 2
 **API LINK:**
 
 List of all routes:
-* [List all cards](#-List-All-Cards)
-* [Card Info](#Card-Info)
-* [All Available](#All-Available)
-* [Available cards from one establishment](#Available-cards-from-one-establishment)
-* [Delete All Establishment cards](#Delete-All-Establishment-Cards)
-* [Delete card](#Delete-Card)
-* [Create new card](#Create-New-Card)
-* [Change Card Availability](#Change-Card-Availability)
-* [Change Card Circulation](#Change-Card-Circulation)
-* [Reset](#Reset)
+* [List all cards](#list-all-cards)
+* [Card Info](#card-info)
+* [All Available](#all-available)
+* [Available cards from one establishment](#available-cards-from-one-establishment)
+* [Delete All Establishment cards](#delete-all-establishment-cards)
+* [Delete card](#delete-card)
+* [Create new card](#create-new-card)
+* [Change Card Availability](#change-card-availability)
+* [Change Card Circulation](#change-card-circulation)
+* [Reset](#reset)
 
 
 

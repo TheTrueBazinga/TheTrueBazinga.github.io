@@ -11,14 +11,14 @@ nav_order: 2
 **API LINK:**  https://consumerapi.docs.apiary.io/#
 
 List of all routes:
-* [Register](#Register)
-* [Login](#Login)
-* [Update Password](#Update-Password)
-* [Update Info](#Update-info)
-* [Reset Password](#Reset-Password)
-* [Update password](#Update-Password)
-* [List all consumers](#-List-all-consumers)
-* [Own Historic](#Get-Historic)
+* [Register](#register)
+* [Login](#login)
+* [Update Password](#update-password)
+* [Update Info](#update-info)
+* [Reset Password](#reset-password)
+* [Update password](#update-password)
+* [List all consumers](#list-all-consumers)
+* [Own Historic](#get-historic)
 
 
 

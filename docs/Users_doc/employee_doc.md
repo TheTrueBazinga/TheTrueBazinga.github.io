@@ -10,14 +10,14 @@ nav_order: 2
 **API LINK:** https://employeeapidocumentation.docs.apiary.io/#
 
 List of all routes:
-* [Register](#Register)
-* [Login](#Login)
-* [Reset Password](#Reset-password)
-* [Update info](#Update-info)
-* [Update email](#Update-email)
-* [Update password](#Update-password)
-* [Get own info](#Get-own-info)
-* [Reset password](#Reset-password)
+* [Register](#register)
+* [Login](#login)
+* [Reset Password](#reset-password)
+* [Update info](#update-info)
+* [Update email](#update-email)
+* [Update password](#update-password)
+* [Get own info](#get-own-info)
+* [Reset password](#reset-password)
 
 
 ### Register

@@ -8,8 +8,8 @@ nav_order: 2
 ## Establishments Managment
 
 List of all routes:
-* [Add Establishment](#Add-Establishment)
-* [List all Establishments](#List-all-Establishment-s)
+* [Add Establishment](#add-establishment)
+* [List all Establishments](#list-all-establishments)
 
 ___
 

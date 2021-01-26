@@ -12,18 +12,18 @@ nav_order: 2
 
 
 All routes:
-* [Login](#Login)
-* [Register](#Register)
-* [Reset Password](#Reset-Password)
-* [Update Employee info](#Update-Employee-info)
-* [Update password](#Update-password)
-* [Update email](#Update-email)
-* [Update own info](#Update-own-info)
-* [Delete manager](#Delete-manager)
-* [Delete employee](#Delete-employee)
-* [Get own info](#Get-own-info)
-* [Reset Password](#Reset-Password)
-* [List all employes](#List-all-employees)
+* [Login](#login)
+* [Register](#register)
+* [Reset Password](#reset-password)
+* [Update Employee info](#update-employee-info)
+* [Update password](#update-password)
+* [Update email](#update-email)
+* [Update own info](#update-own-info)
+* [Delete manager](#delete-manager)
+* [Delete employee](#delete-employee)
+* [Get own info](#get-own-info)
+* [Reset Password](#reset-password)
+* [List all employes](#list-all-employees)
 
 
 ### Login
