@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Categories
+title: Public Relations
 parent: Night Club
 nav_order: 2
 ---
