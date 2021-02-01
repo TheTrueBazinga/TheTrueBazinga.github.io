@@ -12,7 +12,7 @@ permalink: /
 
 # Api-Gateway
 
-## Responde codes
+## Response codes
 
 - 200 `OK` - the request was successful.
 - 400 `Bad Request` - the request could not be understood or was missing required parameters.
