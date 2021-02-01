@@ -51,4 +51,10 @@ Receive requests from front-end and redirects them to CardsMS. This MS only does
 
 * [Phisical Cards DOC](./docs/Cards_doc/cards_doc)
 
+___
 
+### PaymentsMS
+
+Receive requestes from front-end and redirects them to PaymentsMS. This MS only does operation related to payments.
+
+* [Paymens DOC](./docs/Payments_doc/payments_doc)
