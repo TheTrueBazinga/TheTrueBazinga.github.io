@@ -13,6 +13,7 @@ List of all routes:
 * [Confirm Payment](#confirm-payment)
 * [Create Credit Card Token](#create-credit-card-token)
 * [Get Payment Info ](#get-payment-info)
+
 ___
 
 ### Create Payment

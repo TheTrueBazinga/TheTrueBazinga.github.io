@@ -19,6 +19,7 @@ List of all routes:
 * [Get own info](#get-own-info)
 * [Reset password](#reset-password)
 
+____
 
 ### Register
 

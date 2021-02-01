@@ -25,6 +25,7 @@ All routes:
 * [Reset Password](#reset-password)
 * [List all employes](#list-all-employees)
 
+____
 
 ### Login
 * **POST https://nite-apigateway.herokuapp.com/users/manager/login** - Manager Login
